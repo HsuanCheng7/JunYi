@@ -1,0 +1,45 @@
+#Hsuan Cheng's Answers to JunYi Coding Test
+
+#answer to question 1
+def backwards(string_input):
+    if string_input == "":
+        return ""
+    else:
+        return string_input[-1] + backwards(string_input[:-1])
+
+#answer to question 2
+def num_filter(num):
+    filtered_array = []
+    for i in range(num + 1):
+        if (i % 3 == 0) and (i % 5 == 0):
+            filtered_array.append(i)
+        elif (i % 3 != 0) and (i % 5 != 0):
+            filtered_array.append(i)
+    return filtered_array[1:]
+
+def main():
+    answer1 = backwards("flipped classroom is important")
+    print(answer1)
+    answer2 = num_filter(15)
+    print(answer2, "amount of valid numbers is: ", len(answer2))
+
+main()
+
+
+'''
+Forgive me using english instead, it's just a bit faster. Thank you.
+
+question 3:
+Take an item from the bag that is labelled "mixed". Since all bags are mislabelled, the "mixed" bag cannot be the real 
+mixed bag. Thus, if I get a pen from that bag, then that bag is the pen bag. Then, because the bag that is labelled 
+"pencil" cannot be the pencil bag, nor can it be the pen bag since pen bag is the one that's labelled "mixed". 
+Therefore, "pencil" bag has mixed items, and then "pen" bag has pencils. The logic works the same way if I get a pencil 
+from the "mixed" bag in the beginning.
+
+
+question 4:
+900 != how much they paid + how much the worker stole
+900 = how much the worker gave back + how much they paid (since they didn't actually pay 900)
+how much they paid already includes how much the worker stole, it's the amount that the worker gave back to them is 
+missing.
+'''
